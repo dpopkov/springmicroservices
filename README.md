@@ -1,6 +1,7 @@
 # Spring Microservices
 
 ## Projects:
+* 2 - [Base empty project for licensing-service](c02explore/licensing-service)
 * 1 - [Simple app](c01welcome)
     * run app: `mvn spring-boot:run`
     * make GET request: 
