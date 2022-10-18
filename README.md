@@ -1,6 +1,7 @@
 # Spring Microservices
 
 ## Projects:
+* 4 - [Using Docker](c04docker/licensing-service)
 * 3 - [Building microservice](c03building/licensing-service)
 * 2 - [Base empty project for licensing-service](c02explore/licensing-service)
 * 1 - [Simple app](c01welcome)
