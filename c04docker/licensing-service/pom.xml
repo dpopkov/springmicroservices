@@ -52,8 +52,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>${docker.image.prefix}/${project.artifactId}:latest</name>
+                    </image>
+                </configuration>
             </plugin>
-            <!-- This plugin is used to create a Docker image -->
+            <!-- This plugin may be used to create a Docker image (as alternative to spring-boot plugin -->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
