@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+#  database:
+#    image: <database-docker-image-name>
+#    ports:
+#    - "<databasePort>:<databasePort>"
+#    environment:
+#      POSTGRES_USER: <databaseUser>
+#      POSTGRES_PASSWORD: <databasePassword>
+#      POSTGRES_DB: <databaseName>
+  licensingservice:
+    image: sprmsaction/licensing-service:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=default"
+networks:
+  backend:
+    driver: bridge

@@ -12,6 +12,9 @@
         * Stop container: `Ctrl+C` or `docker stop <container-id>`
     * Building image with Spring Boot:
         * Build image: `mvn spring-boot:build-image`
+    * Launching the services with Docker Compose:
+        * Add docker-compose.yml file
+        * Run: `docker-compose up`
 * 3 - [Building microservice](c03building/licensing-service)
 * 2 - [Base empty project for licensing-service](c02explore/licensing-service)
 * 1 - [Simple app](c01welcome)
