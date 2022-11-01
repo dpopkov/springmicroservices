@@ -1,8 +1,18 @@
 spring:
   application:
+    # The name of the licensing service so that the Spring Cloud Config client
+    # knows which service is being looked up.
+    # It must map directly to the name in the config directory within your
+    # Spring Cloud Configuration Server.
     name: licensing-server
-#  profiles:
-#    active: dev
+  profiles:
+    # The default profile the service should run.
+    # The profile maps to a cloud configuration environment.
+    # For instance, by passing in 'dev' as your profile, the Config Server will use the 'dev' properties.
+    # If you don't set a profile, the licensing service will use the default profile.
+    active: dev
   cloud:
     config:
+      # The endpoint the licensing service should use to communicate
+      # with the Spring Cloud Config service.
       uri: http://configserver:8071

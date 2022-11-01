@@ -1,6 +1,23 @@
 # Spring Microservices
 
 ## Projects:
+* 5 - Controlling configuration with Spring Cloud Config Server
+    * Build Spring Cloud [Configuration Server](c05cloudconfig/configserver)
+        * Set up the Spring Cloud Config bootstrap class
+            * configserver: add `@EnableConfigServer` annotation
+        * Use Config Server with a filesystem
+            * configserver: add bootstrap.yml file containing `spring.cloud.config.server.native.search-locations`
+            * licensing-service: add bootstrap.yml file containing `spring.cloud.config.uri`
+        * Setup the configuration files for a service
+            * create `resources/config` directory within configserver project
+            * put property files for the licensing-service into the config directory
+    * Integrate Config Server with a Spring Boot client - [licensing-service](c05cloudconfig/licensing-service)
+        * Set up licensing service dependencies: `spring-cloud-starter-config` plus dependencies for JPA and DB driver
+        * Configure licensing service to use Spring Cloud Config Server
+            * The bootstrap.yml should contain properties for communicating with Spring Cloud Config service:
+                * `spring.application.name`
+                * `spring.profiles.active`
+                * `spring.cloud.config.uri`
 * 4 - [Using Docker](c04docker/licensing-service)
     * Building image with Docker Maven plugin:
         * Add Docker Maven plugin
