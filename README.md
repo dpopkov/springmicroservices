@@ -18,6 +18,9 @@
                 * `spring.application.name`
                 * `spring.profiles.active`
                 * `spring.cloud.config.uri`
+    * Wire in a datasource using Config Server
+        * Add JPA repository, modify model, service and controlling classes for using Data JPA and real DB
+        * Test with config server disabled using property `spring.cloud.config.enabled=false`
 * 4 - [Using Docker](c04docker/licensing-service)
     * Building image with Docker Maven plugin:
         * Add Docker Maven plugin
