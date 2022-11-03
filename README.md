@@ -18,9 +18,16 @@
                 * `spring.application.name`
                 * `spring.profiles.active`
                 * `spring.cloud.config.uri`
+                * UPDATE: the `bootstrap.yml` file is DEPRECATED now.
     * Wire in a datasource using Config Server
         * Add JPA repository, modify model, service and controlling classes for using Data JPA and real DB
         * Test with config server disabled using property `spring.cloud.config.enabled=false`
+        * Test locally with Config Server:
+            * Use `jdbc:postgresql://localhost:5432/<database-name>` for datasource.url kept on config server.
+            * Start configserver.
+            * Move all the properties for connection with Config Server from bootstrap.yml (DEPRECATED) to application.properties.
+            * Use now `spring.config.import=configserver:http://localhost:8071` instead of `spring.cloud.config.uri`
+            * Start licensing-service. It should get properties from the running instance of Config Server.
 * 4 - [Using Docker](c04docker/licensing-service)
     * Building image with Docker Maven plugin:
         * Add Docker Maven plugin
