@@ -28,6 +28,11 @@
             * Move all the properties for connection with Config Server from bootstrap.yml (DEPRECATED) to application.properties.
             * Use now `spring.config.import=configserver:http://localhost:8071` instead of `spring.cloud.config.uri`
             * Start licensing-service. It should get properties from the running instance of Config Server.
+    * How to Refresh properties
+        * Change config properties in the running instance of Config Server
+        * Add `@RefreshScope` annotation to Spring Boot service application and restart it.
+        * Make POST request to `/actuator/refresh` on the restarted service.
+        * Enjoy updated properties in the service!
 * 4 - [Using Docker](c04docker/licensing-service)
     * Building image with Docker Maven plugin:
         * Add Docker Maven plugin
